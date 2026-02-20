@@ -509,4 +509,3 @@
       .ig-grid { grid-template-columns: repeat(2, 1fr); }
       .ig-grid .ig-cell:nth-child(n+5) { display: none; }
     }
-  
