@@ -271,7 +271,7 @@
        PRODUCTOS
     ============================================================ */
     #productos { background: var(--white); }
-    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
     .product-card { position: relative; }
     .product-img {
       aspect-ratio: 3/4; background: var(--beige);
@@ -301,8 +301,8 @@
       letter-spacing: .14em; text-transform: uppercase;
     }
     .product-hover svg { width: 16px; height: 16px; fill: currentColor; }
-    .product-info h3 { font-family: var(--serif); font-size: 17px; font-weight: 600; margin-bottom: 4px; }
-    .product-info p { font-size: 12px; color: var(--gray); font-weight: 400; }
+    .product-info h3 { font-family: var(--serif); font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .product-info p { font-size: 11px; color: var(--gray); font-weight: 400; }
     .product-emoji { font-size: 90px; opacity: .15; position: absolute; bottom: 10px; right: 10px; }
 
     /* ============================================================
