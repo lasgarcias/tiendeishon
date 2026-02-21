@@ -309,12 +309,12 @@
        SOBRE NOSOTRAS
     ============================================================ */
     #sobre { background: var(--black); color: var(--white); padding: 100px 80px; }
-    .sobre-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .sobre-inner { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: center; margin-left: 20px; }
     .sobre-text .section-label { color: var(--earth); }
     .sobre-text .section-title { color: var(--white); }
     .sobre-text .section-title em { color: var(--earth); }
-    .sobre-body { font-size: 14px; color: rgba(255,255,255,.65); font-weight: 300; line-height: 1.9; }
-    .sobre-body p + p { margin-top: 16px; }
+    .sobre-body { font-size: 16px; color: rgba(255,255,255,.65); font-weight: 300; line-height: 1.9; }
+    .sobre-body p + p { margin-top: 2px; }
     .sobre-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
     .stat { border-left: 2px solid var(--earth2); padding-left: 20px; }
     .stat strong { display: block; font-family: var(--serif); font-size: 36px; font-weight: 800; color: var(--white); }
@@ -336,6 +336,10 @@
     }
     .sobre-quote cite { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.7); font-style: normal; display: block; margin-top: 8px; }
 
+    .product-fotito {
+      aspect-ratio: 3/4; background: var(--beige);
+      overflow: hidden; position: relative; margin-bottom: -80px;  max-width: 500px; height: auto; margin-left: 0px;
+    }
     /* ============================================================
        TESTIMONIOS
     ============================================================ */
