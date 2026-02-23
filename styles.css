@@ -42,7 +42,7 @@
       transition: box-shadow var(--tr);
     }
     header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.09); }
-    .logo img { height: 140px; width: auto; }
+    .logo img { height: clamp(56px, 9vw, 140px); width: auto; }
     nav ul { display: flex; gap: 34px; }
     nav a {
       font-size: 11px; font-weight: 600; letter-spacing: .14em;
@@ -309,7 +309,7 @@
        SOBRE NOSOTRAS
     ============================================================ */
     #sobre { background: var(--black); color: var(--white); padding: 100px 80px; }
-    .sobre-inner { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: center; margin-left: 20px; }
+    .sobre-inner { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: center; }
     .sobre-text .section-label { color: var(--earth); }
     .sobre-text .section-title { color: var(--white); }
     .sobre-text .section-title em { color: var(--earth); }
@@ -338,7 +338,7 @@
 
     .product-fotito {
       aspect-ratio: 3/4; background: var(--beige);
-      overflow: hidden; position: relative; margin-bottom: -80px;  max-width: 500px; height: auto; margin-left: 0px;
+      overflow: hidden; position: relative; margin-bottom: -80px; max-width: 500px; width: 100%; height: auto;
     }
     /* ============================================================
        TESTIMONIOS
@@ -479,6 +479,7 @@
       header { padding: 0 32px; }
       nav { display: none; }
       .menu-btn { display: flex; }
+      .btn-wa-header { padding: 10px 16px; }
       .hero { grid-template-columns: 1fr; }
       .hero-visual { min-height: 320px; }
       .hero-text { padding: 60px 40px; }
@@ -486,6 +487,7 @@
       .cats-grid { grid-template-columns: repeat(2, 1fr); }
       .products-grid { grid-template-columns: repeat(2, 1fr); }
       .sobre-inner { grid-template-columns: 1fr; gap: 48px; }
+      .product-fotito { margin-bottom: 0; max-width: 340px; justify-self: center; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .temporada-inner { grid-template-columns: 1fr; }
       .ig-grid { grid-template-columns: repeat(3, 1fr); }
@@ -495,17 +497,30 @@
       header { padding: 0 20px; height: 64px; }
       .mobile-nav { top: 64px; }
       .logo img { height: 42px; }
+      .btn-wa-header { display: none; }
       section { padding: 56px 24px; }
       .hero-text { padding: 48px 24px; }
+      .hero-title { font-size: clamp(32px, 10vw, 42px); }
+      .hero-placeholder { padding: 40px 20px; }
+      .hero-placeholder .big-letter { font-size: clamp(110px, 35vw, 150px); }
+      .hero-badge { left: 20px; right: 20px; bottom: 20px; max-width: none; }
       .cats-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .cat-card-content { padding: 16px 12px; }
+      .cat-card-content h3 { font-size: 17px; }
       .products-grid { grid-template-columns: 1fr; }
       .testimonios-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; text-align: center; }
-      .sobre-stats { grid-template-columns: 1fr 1fr; }
+      .sobre-stats { grid-template-columns: 1fr; gap: 20px; }
+      .temporada-text { padding: 56px 24px; }
+      .temporada-visual-text { font-size: clamp(54px, 18vw, 90px); }
+      .temporada-tag { top: 18px; right: 18px; }
       .hero-btns { flex-direction: column; }
       .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
       .section-header { flex-direction: column; align-items: flex-start; }
+      .wa-float { width: 54px; height: 54px; right: 18px; bottom: 18px; }
+      .wa-float svg { width: 26px; height: 26px; }
+      .wa-tooltip { display: none; }
       .ig-grid { grid-template-columns: repeat(2, 1fr); }
       .ig-grid .ig-cell:nth-child(n+5) { display: none; }
     }
