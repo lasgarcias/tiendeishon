@@ -35,27 +35,56 @@ document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el) =
 // Productos dinámicos para la página de "ver todo"
 const productsAllGrid = document.getElementById('products-all-grid');
 if (productsAllGrid) {
-  const FIRST_VISIBLE_IN_HOME = 6;
-  const TOTAL_PRODUCTOS = 30;
   const whatsappBase = 'https://wa.me/5493515155620?text=';
+  const catalogFiles = [
+    'musculosa.jpeg',
+    'conjunto.jpeg',
+    'top.jpeg',
+    'vestidos.jpeg',
+    'short.jpeg',
+    'short (3).jpeg',
+    'pantalon (3).jpeg',
+    'pantalon.jpeg',
+    'vestido (1).jpeg',
+    'remera (1).jpeg',
+    'top (2).jpeg',
+    'tops.jpeg',
+    'chaleco.jpeg',
+    'chaleco (2).jpeg',
+    'bermuda.jpeg',
+    'body.jpeg',
+    'vestido.jpeg',
+    'pantalon (2).jpeg',
+    'musculosa balloon.jpeg',
+    'vestido (2).jpeg',
+    'short (2).jpeg',
+    'remera (2).jpeg',
+    'chaleco inflable.jpeg'
+  ];
 
-  for (let index = FIRST_VISIBLE_IN_HOME + 1; index <= TOTAL_PRODUCTOS; index += 1) {
+  const toDisplayName = (fileName) => fileName
+    .replace(/\.jpe?g$/i, '')
+    .replace(/\s*\(\d+\)$/, '')
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+
+  catalogFiles.forEach((fileName) => {
+    const productName = toDisplayName(fileName);
     const card = document.createElement('div');
     card.className = 'product-card reveal visible';
 
     card.innerHTML = `
       <div class="product-img">
-        <img class="product-photo" src="Indumentaria/producto${index}.jpeg" alt="Producto ${index}" loading="lazy"/>
+        <img class="product-photo" src="Indumentaria tienda web/${fileName}" alt="${productName}" loading="lazy"/>
         <div class="product-hover">
-          <a href="${whatsappBase}Hola Buenas. Quería consultar disponibilidad del producto ${index}" target="_blank">Consultar →</a>
+          <a href="${whatsappBase}Hola Buenas. Quería consultar disponibilidad de ${productName}" target="_blank">Consultar →</a>
         </div>
       </div>
       <div class="product-info">
-        <h3>Producto ${index}</h3>
+        <h3>${productName}</h3>
         <p>Consultá disponibilidad por WhatsApp</p>
       </div>
     `;
 
     productsAllGrid.appendChild(card);
-  }
+  });
 }
