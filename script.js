@@ -51,7 +51,7 @@ if (productsAllGrid) {
     'tops.jpeg',
     'chaleco.jpeg',
     'chaleco (2).jpeg',
-    'bermuda.jpeg',
+    'bermuda Caro.jpeg',
     'body.jpeg',
     'vestido.jpeg',
     'pantalon (2).jpeg',
