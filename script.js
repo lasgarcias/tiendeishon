@@ -68,37 +68,17 @@ if (productsAllGrid) {
   ];
 
   const removeExtension = (fileName) => fileName.replace(/\.jpe?g$/i, '');
-  const normalizeProductKey = (fileName) => removeExtension(fileName)
+  const getProductName = (fileName) => removeExtension(fileName)
     .replace(/\s*\(\d+\)$/, '')
-    .trim()
-    .toLowerCase();
-  const toDisplayName = (fileName) => removeExtension(fileName)
-    .replace(/\s*\(\d+\)$/, '')
-    .replace(/\b\w/g, (letter) => letter.toUpperCase());
-
-  const productNames = {
-    remera: 'Juno',
-    pantalon: 'Dara',
-    top: 'Onix',
-    short: 'Mora',
-    vestido: 'Luna',
-    vestidos: 'Luna',
-    musculosa: 'Atenea',
-    'musculosa balloon': 'Atenea Balloon',
-    chaleco: 'Nilo',
-    'chaleco inflable': 'Nilo Inflable',
-    bermuda: 'Siena',
-    body: 'Selene',
-    conjunto: 'Aura',
-    tops: 'Onix'
-  };
+    .trim();
+  const normalizeProductKey = (fileName) => getProductName(fileName).toLowerCase();
 
   const productsMap = new Map();
   catalogFiles.forEach((fileName) => {
     const key = normalizeProductKey(fileName);
     if (!productsMap.has(key)) {
       productsMap.set(key, {
-        name: productNames[key] || toDisplayName(fileName),
+        name: getProductName(fileName),
         images: []
       });
     }
