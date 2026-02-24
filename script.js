@@ -20,17 +20,22 @@ if (menuBtn && mobileNav) {
 }
 
 // Animaciones scroll con IntersectionObserver
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.12 });
+const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
 
-document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el) => {
-  observer.observe(el);
-});
+  revealElements.forEach((el) => {
+    observer.observe(el);
+  });
+} else {
+  revealElements.forEach((el) => el.classList.add('visible'));
+}
 
 // Productos dinámicos para la página de "ver todo"
 const productsAllGrid = document.getElementById('products-all-grid');
