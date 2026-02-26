@@ -42,43 +42,108 @@ const productsAllGrid = document.getElementById('products-all-grid');
 if (productsAllGrid) {
   const whatsappBase = 'https://wa.me/5493515155620?text=';
   const catalogFiles = [
-    'bermuda.jpeg',
+    'bermuda Caro.jpeg',
+    'blusa alba.jpeg',
+    'blusa gaia.jpeg',
     'body.jpeg',
-    'chaleco.jpeg',
-    'chaleco (2).jpeg',
-    'chaleco inflable.jpeg',
-    'conjunto.jpeg',
-    'musculosa.jpeg',
+    'camisa juno (2).jpeg',
+    'camisa juno (3).jpeg',
+    'camisa juno (4).jpeg',
+    'camisa juno.jpeg',
+    'chaleco Ada.jpeg',
+    'chaleco Icon.jpeg',
+    'chaleco Jaz.jpeg',
+    'chaleco aura.jpeg',
+    'chaleco cloe.jpeg',
+    'chaleco rhea.jpeg',
+    'chaleco rhea (2).jpeg',
+    'chaleco rhea (3).jpeg',
     'musculosa balloon.jpeg',
-    'pantalon.jpeg',
-    'pantalon (2).jpeg',
-    'pantalon (3).jpeg',
-    'remera (1).jpeg',
-    'remera (2).jpeg',
-    'short.jpeg',
-    'short (2).jpeg',
-    'short (3).jpeg',
-    'top.jpeg',
-    'top (2).jpeg',
-    'tops.jpeg',
-    'vestido.jpeg',
-    'vestido (1).jpeg',
-    'vestido (2).jpeg',
-    'vestidos.jpeg'
+    'musculosa eira.jpeg',
+    'musculosa jana (4).jpeg',    
+    'musculosa jana (3).jpeg',    
+    'musculosa jana (2).jpeg',    
+    'musculosa jana.jpeg',    
+    'musculosa nox.jpeg',
+    'musculosa nox (2).jpeg',
+    'musculosa nox (3).jpeg',
+    'musculosa nox (4).jpeg',
+    'musculosa onix.jpeg',
+    'musculosa onix (2).jpeg',
+    'musculosa onix (3).jpeg',
+    'musculosa onix (4).jpeg',
+    'pantalon gala (2).jpeg',
+    'pantalon gala (3).jpeg',
+    'pantalon gala.jpeg',
+    'patalon.jpeg',
+    'pollera pantalon nova (2).jpeg',
+    'pollera pantalon nova (3).jpeg',
+    'pollera pantalon nova.jpeg',
+    'remera bali (2).jpeg',
+    'remera bali.jpeg',
+    'remera chiao bella.jpeg',
+    'remera fay.jpeg',
+    'remera ger.jpeg',
+    'remera iza.jpeg',
+    'remera mare.jpeg',
+    "remera mare (2).jpeg",
+    'remera margo (2).jpeg',
+    'remera margo (4).jpeg',
+    'remera margo (3).jpeg',
+    'remera margo.jpeg',
+    'remera ray.jpeg',
+    'remera sian (2).jpeg',
+    'remera sian.jpeg',
+    'remera sun (2).jpeg',
+    'remera sun.jpeg',
+    "remera vita (3).jpeg",
+    'remera vita (2).jpeg',
+    'remera vita.jpeg',
+    'short lumi (2).jpeg',
+    'short lumi (3).jpeg',
+    'short lumi.jpeg',
+    'short noa (2).jpeg',
+    'short noa (3).jpeg',
+    'short noa.jpeg',
+    'short ona.jpeg',
+    'short rua.jpeg',
+    'short tora (2).jpeg',
+    'short tora.jpeg',
+    'top dara (2).jpeg',
+    'top dara (3).jpeg',
+    'top dara (4).jpeg',
+    'top dara (5).jpeg',
+    'top dara.jpeg',
+    'top kala (1).jpeg',
+    'top kala (2).jpeg',
+    'top kala (3).jpeg',
+    'top lila (2).jpeg',
+    'top lila.jpeg',
+    'top vera.jpeg',
+    'top zoe.jpeg',
+    'tops lola.jpeg',
+    'vestido flora.jpeg',
+    'vestido gema (2).jpeg',
+    'vestido gema.jpeg',
+    'vestido kyra.jpeg',
+    "remera eter.jpeg",
   ];
 
   const removeExtension = (fileName) => fileName.replace(/\.jpe?g$/i, '');
-  const getProductName = (fileName) => removeExtension(fileName)
+  const normalizeProductKey = (fileName) => removeExtension(fileName)
     .replace(/\s*\(\d+\)$/, '')
-    .trim();
-  const normalizeProductKey = (fileName) => getProductName(fileName).toLowerCase();
+    .trim()
+    .toLowerCase();
+  const toDisplayName = (fileName) => removeExtension(fileName)
+    .replace(/\s*\(\d+\)$/, '')
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
 
   const productsMap = new Map();
   catalogFiles.forEach((fileName) => {
     const key = normalizeProductKey(fileName);
     if (!productsMap.has(key)) {
       productsMap.set(key, {
-        name: getProductName(fileName),
+        name: toDisplayName(fileName),
         images: []
       });
     }
